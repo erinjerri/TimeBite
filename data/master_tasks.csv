@@ -1,2 +1,3 @@
-task_id,created_at,date,focus,title,description,status,owner,priority,blocked_by,notes
-TB-001,2026-02-12,Thu Feb 12,Scope,Lock iOS-first MVP,Define in-scope features and out-of-scope cuts for MVP,planned,erinjerri,high,,
+task_id,created_at,focus,title,intent_text,source_modality,scenario,status,owner,priority,budget_limit,max_steps,timeout_ms,approval_required,minutes_reclaimed,session_id,run_id,notes
+TB-001,2026-02-12T09:00:00Z,Scope,Lock iOS-first MVP,Define novelty and benchmark scope,text,mvp-scope,planned,erinjerri,3,,,,false,,S-001,R-001,Initial scope lock artifact in docs/scope-lock.md
+TB-002,2026-02-13T09:00:00Z,Data model,Create Task schema v2,Define CYRA-based TaskSchema with TimeBite CoreML+safety fields,text,data-model-v1,in_review,erinjerri,3,,,,false,,S-001,R-001,See docs/task-schema.md and docs/schemas/task.schema.json

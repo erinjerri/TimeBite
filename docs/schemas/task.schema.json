@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://timebite.dev/schemas/task.schema.json",
+  "title": "TimeBite TaskSchema v2",
+  "type": "object",
+  "required": ["task_id", "title", "status", "priority", "created_at"],
+  "properties": {
+    "task_id": { "type": "string", "minLength": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": ["planned", "pending", "running", "blocked", "completed", "failed", "cancelled"]
+    },
+    "priority": { "type": "integer", "minimum": 0, "maximum": 3 },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "intent_text": { "type": "string" },
+    "source_modality": {
+      "type": "string",
+      "enum": ["voice", "text", "coreml_vision", "mixed"]
+    },
+    "scenario": { "type": "string" },
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "budget_limit": { "type": "number", "minimum": 0 },
+        "categories": { "type": "array", "items": { "type": "string" } },
+        "max_steps": { "type": "integer", "minimum": 1 },
+        "timeout_ms": { "type": "integer", "minimum": 1 }
+      },
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "allowlist_id": { "type": "string" },
+        "approval_required": { "type": "boolean" },
+        "irreversible_action_types": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "assignment": {
+      "type": "object",
+      "properties": {
+        "owner": { "type": "string" },
+        "session_id": { "type": "string" },
+        "run_id": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "baseline_minutes": { "type": "number", "minimum": 0 },
+        "actual_minutes": { "type": "number", "minimum": 0 },
+        "minutes_reclaimed": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "coreml_context": {
+      "type": "object",
+      "properties": {
+        "model": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "observations": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": false
+}

@@ -204,5 +204,6 @@ cp .env.example .env
 - Roadmap checklist: [docs/to-do-list.md](docs/to-do-list.md).
 - Architecture and safety baseline: this README.
 - Scope lock (Task 1): [docs/scope-lock.md](docs/scope-lock.md)
+- Task schema (Task 2): [docs/task-schema.md](docs/task-schema.md), [docs/schemas/task.schema.json](docs/schemas/task.schema.json)
 - Submission tracker: [docs/submission-checklist.md](docs/submission-checklist.md)
 - Data scaffolds: `data/master_tasks.csv`, `data/shopping_sessions.csv`, `data/timecake_insights.csv`, `data/telemetry_runs/`
