@@ -1,7 +1,7 @@
 # TimeBite
 Previously called CYRA (Creating Your Reality Agent), TimeBite is an Apple Vision Claw-style productivity agent with a measurable eval/benchmark loop for computer-use tasks.
 
-![TimeBite Logo](assets/TimeBite.png)
+![TimeBite Logo](assets/TimeBite-400.png)
 
 ## TL;DR
 TimeBite captures user intent (voice/text), plans safe computer actions, runs guarded execution loops, and reports time-reclaimed outcomes through dashboard metrics and benchmark runs.
