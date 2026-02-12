@@ -1,0 +1,2 @@
+insight_id,session_id,created_at,bucket,metric_name,metric_value,unit,window_start,window_end,method,notes
+I-001,S-001,2026-02-12T10:00:00Z,personal,minutes_reclaimed,0,minutes,2026-02-12T00:00:00Z,2026-02-12T23:59:59Z,baseline,initialize baseline row

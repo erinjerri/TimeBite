@@ -1,0 +1,2 @@
+session_id,user_id,started_at,ended_at,scenario,status,budget_limit,category_constraints,target_item_count,minutes_reclaimed,notes
+S-001,owner,2026-02-12T09:00:00Z,,mom-gift-v1,planned,100.00,gifts;home,3,,

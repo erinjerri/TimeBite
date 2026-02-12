@@ -10,7 +10,7 @@
 | - [ ] | Tue Feb 17 | STT | "Wire speech intent -> structured action request." |
 | - [ ] | Wed Feb 18 | Approvals | "Require human confirm at cart/checkout." |
 | - [ ] | Thu Feb 19 | Agent loop | "Implement screenshot/action loop with retries." |
-| - [ ] | Fri Feb 20 | VisionKit | "Capture OCR/context -> task fields." |
+| - [ ] | Fri Feb 20 | VisionKit | "Capture CoreML vision/context -> task fields." |
 | - [ ] | Sat Feb 21 | Telemetry | "Log step events: action, latency, outcome." |
 | - [ ] | Sun Feb 22 | Storage | "Persist runs/events in Lambda bucket layout." |
 | - [ ] | Mon Feb 23 | Retail scenario | "Mom gift scenario v1 (3-item target)." |

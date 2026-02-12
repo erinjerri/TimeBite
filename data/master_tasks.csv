@@ -1,0 +1,2 @@
+task_id,created_at,date,focus,title,description,status,owner,priority,blocked_by,notes
+TB-001,2026-02-12,Thu Feb 12,Scope,Lock iOS-first MVP,Define in-scope features and out-of-scope cuts for MVP,planned,erinjerri,high,,

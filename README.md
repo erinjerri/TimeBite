@@ -41,6 +41,22 @@ docker run ghcr.io/erinjerri/cyra-green-agent:latest
 - Publish a new image tag if logic changed (policy, scoring, tool behavior, schema), then update the registered agent image reference.
 - Register a new Green Agent only if you are creating a distinct benchmark identity (new domain/leaderboard), not for routine iteration.
 
+## Overall App Architecture
+```mermaid
+flowchart LR
+    U["User (iOS)"] --> APP["TimeBite App"]
+    APP --> API["API Gateway (/process, /runs, /metrics)"]
+    API --> LPROC["Lambda: Process Orchestrator"]
+    LPROC --> LSAFE["Lambda: Policy + Approval Guard"]
+    LPROC --> LVIS["On-device CoreML Vision Context"]
+    LPROC --> LACT["Lambda: Action Runtime + Retry"]
+    LACT --> TELEM["Step Telemetry Stream"]
+    TELEM --> LSTORE["Lambda Storage DB (S3 bucket layout + run index)"]
+    LSTORE --> INS["Insights Aggregator"]
+    INS --> DASH["Dashboard (Ring + Buckets + Matrix)"]
+    LSTORE --> BENCH["Benchmark/Eval Harness"]
+```
+
 ## Information Architecture
 ```mermaid
 flowchart TD
@@ -48,11 +64,11 @@ flowchart TD
     B --> C["Task/Session Orchestrator"]
     C --> D["Policy + Guardrails"]
     D --> E["Agent Runtime (Plan -> Act -> Observe)"]
-    E --> F["Computer Use Layer (Screenshot/OCR/Action)"]
+    E --> F["Computer Use Layer (Screenshot/CoreML Context/Action)"]
     E --> G["Approval Gate (cart/checkout/irreversible)"]
     F --> H["Telemetry Stream"]
     G --> H
-    H --> I["Run/Event Storage"]
+    H --> I["Lambda Storage DB (Runs/Events/Insights)"]
     I --> J["Insights Engine"]
     J --> K["Dashboard (Ring, Buckets, Matrix)"]
     I --> L["Benchmark Harness"]
@@ -77,12 +93,12 @@ flowchart LR
 
     subgraph Runtime["Agent Runtime Layer"]
         R1["Planner"]
-        R2["Vision/OCR Context"]
+        R2["CoreML Vision Context"]
         R3["Action Executor"]
         R4["Retry + Timeout Controller"]
     end
 
-    subgraph Data["Data Layer"]
+    subgraph Data["Data Layer (Lambda Storage DB)"]
         D1["Task Store"]
         D2["Session/Run Store"]
         D3["Event Logs"]
@@ -113,7 +129,7 @@ sequenceDiagram
     participant API as Process API
     participant Policy as Guardrails
     participant Agent as Runtime Loop
-    participant Vision as Vision/OCR
+    participant Vision as CoreML Vision
     participant Exec as Action Executor
     participant Approve as Human Approval
     participant Log as Telemetry
@@ -185,5 +201,8 @@ cp .env.example .env
 > Note: this repository is currently documentation-first. Replace placeholder setup commands with your actual stack commands as implementation lands.
 
 ## Documentation
-- Roadmap checklist: [docs/to-do-list.md](docs/to-do-list.md) (also embedded below).
+- Roadmap checklist: [docs/to-do-list.md](docs/to-do-list.md).
 - Architecture and safety baseline: this README.
+- Scope lock (Task 1): [docs/scope-lock.md](docs/scope-lock.md)
+- Submission tracker: [docs/submission-checklist.md](docs/submission-checklist.md)
+- Data scaffolds: `data/master_tasks.csv`, `data/shopping_sessions.csv`, `data/timecake_insights.csv`, `data/telemetry_runs/`

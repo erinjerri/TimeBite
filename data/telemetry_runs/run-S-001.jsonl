@@ -1,0 +1,2 @@
+{"run_id":"R-001","session_id":"S-001","ts":"2026-02-12T09:00:12Z","step_index":1,"action":"open_site","latency_ms":732,"outcome":"ok","safety_flag":"none","url":"https://example.com","screenshot_ref":"shots/R-001/step-001.png"}
+{"run_id":"R-001","session_id":"S-001","ts":"2026-02-12T09:00:20Z","step_index":2,"action":"search_item","latency_ms":1250,"outcome":"ok","safety_flag":"none","url":"https://example.com/search","screenshot_ref":"shots/R-001/step-002.png"}
