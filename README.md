@@ -200,6 +200,21 @@ cp .env.example .env
 
 > Note: this repository is currently documentation-first. Replace placeholder setup commands with your actual stack commands as implementation lands.
 
+## Backend API (Current Stub)
+```bash
+cd backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+Routes:
+- `POST /process`
+- `GET /runs`
+- `GET /metrics`
+- `GET /health`
+
 ## Documentation
 - Roadmap checklist: [docs/to-do-list.md](docs/to-do-list.md).
 - Architecture and safety baseline: this README.

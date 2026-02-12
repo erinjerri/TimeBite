@@ -1,3 +1,5 @@
 task_id,created_at,focus,title,intent_text,source_modality,scenario,status,owner,priority,budget_limit,max_steps,timeout_ms,approval_required,minutes_reclaimed,session_id,run_id,notes
 TB-001,2026-02-12T09:00:00Z,Scope,Lock iOS-first MVP,Define novelty and benchmark scope,text,mvp-scope,planned,erinjerri,3,,,,false,,S-001,R-001,Initial scope lock artifact in docs/scope-lock.md
-TB-002,2026-02-13T09:00:00Z,Data model,Create Task schema v2,Define CYRA-based TaskSchema with TimeBite CoreML+safety fields,text,data-model-v1,in_review,erinjerri,3,,,,false,,S-001,R-001,See docs/task-schema.md and docs/schemas/task.schema.json
+TB-002,2026-02-13T09:00:00Z,Data model,Create Task schema v2,Define CYRA-based TaskSchema with TimeBite CoreML+safety fields,text,data-model-v1,completed,erinjerri,3,,,,false,,S-001,R-001,Completed: docs/task-schema.md + docs/schemas/task.schema.json
+TB-003,2026-02-14T09:00:00Z,Backend,Spin up API routes /process /runs /metrics,Stand up FastAPI stubs with local data/telemetry wiring,text,backend-v1,completed,erinjerri,3,,,,false,,S-001,,Completed in backend/main.py (/process, /runs, /metrics, /health)
+TB-004,2026-02-15T09:00:00Z,Policy,Add allowlist + max-step + timeout config,Introduce policy config and enforce in process/runtime path,text,policy-v1,in_progress,erinjerri,3,,,,true,,S-001,,Next item from docs/to-do-list.md

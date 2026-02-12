@@ -3,8 +3,8 @@
 | Done | Date | Focus | Task Snippet |
 |---|---|---|---|
 | - [ ] | Thu Feb 12 | Scope | "Lock iOS-first MVP, define novelty = time-reclaimed benchmark." |
-| - [ ] | Fri Feb 13 | Data model | "Create Task/Session/Run/Insight schemas." |
-| - [ ] | Sat Feb 14 | Backend | "Spin up API routes: /process, /runs, /metrics." |
+| - [x] | Fri Feb 13 | Data model | "Create Task/Session/Run/Insight schemas." |
+| - [x] | Sat Feb 14 | Backend | "Spin up API routes: /process, /runs, /metrics." |
 | - [ ] | Sun Feb 15 | Policy | "Add allowlist + max-step + timeout config." |
 | - [ ] | Mon Feb 16 | Compliance | "Review new guidelines, create delta task list." |
 | - [ ] | Tue Feb 17 | STT | "Wire speech intent -> structured action request." |
