@@ -156,7 +156,7 @@ cp .env.example .env
 > Note: this repository is currently documentation-first. Replace placeholder setup commands with your actual stack commands as implementation lands.
 
 ## Documentation
-- Roadmap checklist: `docs/to-do-list.md` (or below section in this README).
+- Roadmap checklist: [docs/to-do-list.md](docs/to-do-list.md) (also embedded below).
 - Architecture and safety baseline: this README.
 
 ## Build Plan Checklist
